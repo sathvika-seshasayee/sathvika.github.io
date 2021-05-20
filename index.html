@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Microsoft</title>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link rel="stylesheet" href="../to-do2/styles/styles.css">
+    <script src="../to-do2/javascript/script.js" defer></script>
+</head>
+<body>
+    <div id = "top">
+        <i id = "navigation" class="fas fa-bars"></i>
+        <a class = todo href = index.html>To Do</a>
+        <span class = "search">
+            <i id = "search-icon" class="fas fa-search"></i>
+            <input name = "search" type = "search">
+        </span>
+        <div class = "space"></div>
+        <i class="fas fa-cog"></i>
+        <i class="fas fa-question"></i>
+        <i class="fas fa-bullhorn"></i>
+        <span id = "login-name">SS</span>
+    </div>
+    <div id = "left">
+        <i class="fas fa-chevron-left" id = "toggle-icon"></i>
+       <div id = "left-unordered-list">
+        <ul id = "left-navigation">
+        </ul>
+        </div>
+    <div class = "new-task-category-input">
+        <i class="fas fa-plus"></i>
+    <input name = "new-task-category-input" placeholder="New list" id = "input-new-task-category">
+    </div>
+    <div class = "icons-bottom">
+        <i class="far fa-envelope"></i>
+        <i class="far fa-calendar-alt"></i>
+        <i class="fas fa-user-friends"></i>
+        <i class="fas fa-paperclip"></i>
+        <i class="fas fa-check-double"></i>
+    </div>
+    </div>
+    <div id = "center">
+        <div id = "center-title">
+        <span id = 5>Tasks</span>
+        <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <i class="fas fa-plus" id = "icon-add-new-task"></i>
+        <input id = "new-sub-task-input" name = "new-sub-task-input" placeholder="Add a task">
+        <div class = "add-task-border"></div>
+        <ul id = "existing-task-list">
+        </ul>
+    </div>
+    <div id = "right">
+        <div class = "task-name-add-step">
+        <div class = "sub-task-name">
+            <input type = "checkbox"> 
+            <input type = "text" id = "set-sub-task-name">
+            <i class = "far fa-star" id = "set-sub-task-icon"></i>
+        </div>
+        <ul class = "sub-steps">
+        </ul>
+        <div class = "add-step-input">
+            <i class="fas fa-plus"></i>
+            <input name = "add-step-input" placeholder="add step">
+        </div>
+    </div>
+        <div class = "right-add-to-my-day">
+            <i class="far fa-sun"></i>
+            <span>Add to My Day</span>
+        </div>
+        <div class = "remainder">
+            <ul>
+                <li>
+                    <i class="far fa-bell"></i>
+                    <span>Remaind me</span>
+                </li>
+                <li>
+                    <i class="fas fa-calendar-week"></i>
+                    <span>Add due date</span>
+                </li>
+                <li>
+                    <i class="fas fa-redo"></i>
+                    <span>Repeat</span>
+                </li>
+            </ul>   
+        </div>
+        <div class = "pick-a-category">
+            <i class="fas fa-tag"></i>
+            <span>Pick a category</span>
+        </div>
+        <div class = "add-file">
+            <i class="fas fa-paperclip"></i>
+            <span>Add file</span>
+        </div>
+        <div class = "add-notes">
+            <input name = "add-notes" id ="add-supplementary-notes">
+        </div>
+    </div>
+</body>
