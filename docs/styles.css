@@ -142,6 +142,7 @@ body #center {
 
 body #center i {
   font-size: 9px;
+  padding-top: 5%;
 }
 
 body #center span {
@@ -160,6 +161,7 @@ body #center #center-title i {
 
 body #center #icon-add-new-task {
   color: #0078D7;
+  padding-top: 0%;
 }
 
 body #center #new-sub-task-input {
@@ -167,7 +169,7 @@ body #center #new-sub-task-input {
   font-size: 12px;
   width: 94%;
   border: none;
-  padding: 1% 0% 0% 1%;
+  padding: 0% 0% 0% 1%;
 }
 
 body #center #existing-task-list {
