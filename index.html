@@ -8,68 +8,76 @@
     <link rel="stylesheet" href="../to-do2/styles/styles.css">
     <script src="../to-do2/javascript/script.js" defer></script>
 </head>
+
 <body>
-    <div id = "top">
-        <i id = "navigation" class="fas fa-bars"></i>
-        <a class = todo href = index.html>To Do</a>
-        <span class = "search">
-            <i id = "search-icon" class="fas fa-search"></i>
-            <input name = "search" type = "search">
+    <div class="top">
+        <div class = "top-left">
+        <i class="fas fa-bars"></i>
+        <a class=todo href=index.html>To Do</a>
+    </div>
+    <div class = "top-center">
+        <span class="search">
+            <i class="fas fa-search"></i>
+            <input name="search" type="search">
         </span>
-        <div class = "space"></div>
+    </div>
+    <div class = "top-right">
         <i class="fas fa-cog"></i>
         <i class="fas fa-question"></i>
         <i class="fas fa-bullhorn"></i>
-        <span id = "login-name">SS</span>
+        <span class="login-name">SS</span>
     </div>
-    <div id = "left">
-        <i class="fas fa-chevron-left" id = "toggle-icon"></i>
-       <div id = "left-unordered-list">
-        <ul id = "left-navigation">
-        </ul>
+    </div>
+    <div class="left-container">
+            <i class="fas fa-chevron-left" class="toggle-icon"></i>
+        <div id="left-unordered-list">
+            <ul id="left-navigation">
+            </ul>
         </div>
-    <div class = "new-task-category-input">
-        <i class="fas fa-plus"></i>
-    <input name = "new-task-category-input" placeholder="New list" id = "input-new-task-category">
-    </div>
-    <div class = "icons-bottom">
-        <i class="far fa-envelope"></i>
-        <i class="far fa-calendar-alt"></i>
-        <i class="fas fa-user-friends"></i>
-        <i class="fas fa-paperclip"></i>
-        <i class="fas fa-check-double"></i>
-    </div>
-    </div>
-    <div id = "center">
-        <div id = "center-title">
-        <span id = 5>Tasks</span>
-        <i class="fas fa-ellipsis-h"></i>
-        </div>
-        <i class="fas fa-plus" id = "icon-add-new-task"></i>
-        <input id = "new-sub-task-input" name = "new-sub-task-input" placeholder="Add a task">
-        <div class = "add-task-border"></div>
-        <ul id = "existing-task-list">
-        </ul>
-    </div>
-    <div id = "right">
-        <div class = "task-name-add-step">
-        <div class = "sub-task-name">
-            <input type = "checkbox"> 
-            <input type = "text" id = "set-sub-task-name">
-            <i class = "far fa-star" id = "set-sub-task-icon"></i>
-        </div>
-        <ul class = "sub-steps">
-        </ul>
-        <div class = "add-step-input">
+        <div class="new-task-category-input">
             <i class="fas fa-plus"></i>
-            <input name = "add-step-input" placeholder="add step">
+            <input name="new-task-category-input" placeholder="New list" id="input-new-task-category">
         </div>
+        <footer>
+            <div class="icons-bottom">
+                <i class="far fa-envelope"></i>
+                <i class="far fa-calendar-alt"></i>
+                <i class="fas fa-user-friends"></i>
+                <i class="fas fa-paperclip"></i>
+                <i class="fas fa-check-double"></i>
+            </div>
+        </footer>
     </div>
-        <div class = "right-add-to-my-day">
+    <div class="center-container">
+        <div class="center-title">
+            <span id=5>Tasks</span>
+            <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <i class="fas fa-plus" class="icon-add-new-task"></i>
+        <input id="new-task-input" name="new-task-input" placeholder="Add a task">
+        <div class="add-task-border"></div>
+        <ul id="existing-task-list">
+        </ul>
+    </div>
+    <div class="right-container-hidden">
+        <div class="add-step">
+            <div class="sub-task-name">
+                <input type="checkbox" class="checkbox-input-right">
+                <span class="set-sub-task-name"></span>
+                <i class="far fa-star" id = "set-sub-task-icon"></i>
+            </div>
+            <ul class="sub-task">
+            </ul>
+            <div>
+                <i class="fas fa-plus"></i>
+                <input name="add-step-input" id = "add-step-input" placeholder="add step">
+            </div>
+        </div>
+        <div class="add-to-my-day">
             <i class="far fa-sun"></i>
             <span>Add to My Day</span>
         </div>
-        <div class = "remainder">
+        <div class="remainder">
             <ul>
                 <li>
                     <i class="far fa-bell"></i>
@@ -79,22 +87,22 @@
                     <i class="fas fa-calendar-week"></i>
                     <span>Add due date</span>
                 </li>
-                <li>
+                <li class = "last-list">
                     <i class="fas fa-redo"></i>
                     <span>Repeat</span>
                 </li>
-            </ul>   
+            </ul>
         </div>
-        <div class = "pick-a-category">
+        <div>
             <i class="fas fa-tag"></i>
             <span>Pick a category</span>
         </div>
-        <div class = "add-file">
+        <div>
             <i class="fas fa-paperclip"></i>
             <span>Add file</span>
         </div>
-        <div class = "add-notes">
-            <input name = "add-notes" id ="add-supplementary-notes">
+        <div class="add-notes">
+            <textarea name="add-notes" class="add-supplementary-notes" rows="4"></textarea>
         </div>
     </div>
 </body>

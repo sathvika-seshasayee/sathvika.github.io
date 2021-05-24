@@ -1,252 +1,283 @@
+@import url(../styles/colors.scss);
 body {
     margin: 0px;
-}
-#top {
-   display: block;
-   background-color: #0078D7;
-   padding: 0.5% 0% 0.5% 1%;
-}
-#top a {
-    display: inline-block;
-    width: 28%;
-    text-decoration: none;
-    color: white;
-    font-family: sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-}
-#top > i {
-    display: inline-block;
-    width: 3%;
-    color: white;
-    font-size: 12px;
-}
-.search {
-    display: inline-block;
-    width: 28%;
-    background-color: #badef7;
-    border-radius: 2px;
-    padding:0.15%;
-    height: 1.4em;
-    vertical-align: center;
-}
-#left-navigation{
-    list-style: none;
-}
-#login-name {
-    display: inline-block;
-    border-radius: 50%;
-    border: 1px solid white;
-    color: white;
-    font-size: 10px;
-    padding: 0.55%;
-}
-.space {
-    display: inline-block;
-    width: 25%;
-}
-.search input {
-    border: 0px;       // add border radius
-    background-color: #badef7;
-    width: 85%;
-    outline: none;
-}
-#center-title span{
-    display: inline-block;
-    padding:2% 0% 2% 0%;
-}
-#center-title i {
-    display: inline-block;
-    padding-left: 2%;
-}
-#new-sub-task-input {
-    outline: none;
-    font-size: 10px;
-    width: 94%;
-    border: none;
-  //  border-bottom: 1px solid rgb(184, 179, 179);
-    padding: 1% 0% 0% 1%;
-}
-#search-icon {
-    color: blue;
-    background-color: #badef7; 
-    font-size: 12px;
-    padding-left: 1%;
-}
-#left {
-    background-color: #f4f4f4;
-    display: inline-block;
-    width: 21.7%;
     height: 465px;
-}
-#toggle-icon {
-    padding: 8% 10% 0% 7%;
-    color: #ada5f9;
-}
-#left i {
-    display: inline-block;
-    padding: 4% 6% 4% 7%;
-    width: 5%;
-    color: #c7cacc;
-}
-.new-task-category-input {
-    font-size: 10px;
-}
-.new-task-category-input i{
-    padding-right: 10px;
-   
-}
-#icon-add-new-task {
-    color: #5581c7;
-}
-.task-name-add-step {
-    background-color: white;
-    margin: 2% 0% 2% 0%;
-}
-.right-add-to-my-day {
-    background-color: white;
-    margin: 8% 0% 2% 0%;
-    padding: 5% 0% 5% 0%;
-}
-#add-supplementary-notes {
-    border: none;
-    outline: none;
-    width: 98%;
-    height: 100%;
-}
-.add-file {
-    background-color: white;
-    padding: 5% 0% 5% 0%;
-    margin: 5% 0% 5% 0%;
-}
-.add-step-input input {
-    outline: none;
-    border: none;
-    font-size: 12px;
-}
-.pick-a-category {
-    background-color: white;
-    padding: 5% 0% 5% 0%;
-}
-.remainder {
-    background-color: white;
-    margin: 2% 0% 2% 0%;
-}
-.remainder ul {
-    list-style: none;
-    padding: 0%;
-}
-#right span {
-    display: inline-block;
-    width: 85%;
-    font-size: 12px;
-}
-.remainder li i{
-    
-}
-.remainder li span{
-    padding: 5% 0% 5% 0%;
-    border-bottom: 1px solid #e6e4e4;
-}
-#right i {
-    display: inline-block;
-    width: 9%;
-    font-size: 12px;
-    color: #c7cacc;
-}
-#right {
-    background-color: #f4f4f4;
-    display: inline-block;
-    width: 24%;
-    padding: 0.75%;
-    vertical-align: top;
-}
-#checkbox-input-right {
-    display: inline-block;
-    width: 3%;
-}
-#set-sub-task-name {
-    display: inline-block;
-    width: 78%;
-    border: none;
-    outline: none;
-}
-#center-shrunk {
-    display: inline-block;
-    width: 50%;
-   vertical-align: top;
-   padding-left: 1%;
-}
-#center {
-    display: inline-block;
-    width: 75%;
-   vertical-align: top;
-   padding-left: 1%;
-}
-#center i {
-    font-size: 9px;
-}
-#center span {
-    font-family: Verdana;
-    font-size: 8x;
-    color: #2c82e8;
-}
-.new-task-category-input input{
-    outline: none;
-    border: none;
-    font-size: 12px;
-    background-color: #f4f4f4;
-}
-.icons-bottom {
-   bottom: 0px; 
-   padding-left: 2%;
-   position: static;
-   align-items:flex-end;
-}
-.icons-bottom i {
-    display: inline-block;
-    color: #c7cacc;
-    padding: 5% ;
-}
-#existing-task-list {
-   list-style: none;
-   padding: 0% ;
-   margin: 0%;
-}
-.add-task-border {
-    padding-top: 1%;
-    border-bottom: 1px solid #2c82e8;
-}
-#existing-task-list input {
-    display: inline-block;
-    width: 5%;
-}
-#existing-task-list span {
-    display: inline-block;
-    width: 90%;
-}
-#changeIconBlue {
-    color: blue;
-}
-#existing-task-list i {
-    font-size: 12px;
-}
-#existing-task-list li {
-    border-bottom: 1px solid rgb(184, 179, 179);
-    padding: 1% 0% 1% 0% ;
-    font-size: 12px;
-}
-input[type=checkbox]:checked  + span {
-    text-decoration: line-through;
-  }
-#left-navigation {
-    padding: 0px;
-    font-size: 11px;
-    font-family: sans-serif;
-}
-#left-navigation span {
-    cursor:pointer;
-}
-#existing-task-list span {
-    cursor:pointer;
+    input[type=checkbox]:checked  + span {
+        text-decoration: line-through;
+    }
+    input {
+        border: none;
+        outline: none;
+    }
+    ul  {
+        list-style: none;
+        span {
+            cursor : pointer;
+        }
+    }
+    .top {
+        font-family: Arial, Helvetica, sans-serif;
+        display: block;
+        background-color: $topBar;
+        padding: 6px 0px 6px 2px;
+        a {
+            display: inline-block;
+            width: 28%;
+            text-decoration: none;
+            color: $topBarIcons;
+            font-size: 12px;
+            font-weight: 700;
+        }
+       i {
+            padding-right: 15px;
+            color: $topBarIcons;
+            font-size: 12px;
+        }
+        .top-left {
+            display: inline-block;
+            width: 33%;
+        }
+        .top-center {
+            display: inline-block;
+            width: 29%;
+        }
+         .top-right {
+           display: inline-block;
+           width: 36%;
+           text-align: right;
+        }
+        .search {
+             display: inline-block;
+             width: 100%;
+             background-color: $searchBar;
+             border-radius: 2px;
+             padding:1px;
+             height: 1.4em;
+             vertical-align: center;
+             input {
+                 background-color: $searchBar;
+                 width: 85%;
+             }
+             i {
+                 color: $searchBarIcon;
+                 background-color: $searchBar; 
+                 font-size: 12px;
+                 padding-left: 2px;
+             }
+         }
+         .login-name {
+             display: inline-block;
+             border-radius: 50%;
+             border: 1px solid $topBarIcons;
+             color: $topBarIcons;
+             font-size: 10px;
+             padding: 0.55%;
+         }
+    }
+    .left-container {
+        background-color: $left;
+        display: inline-block;
+        width: 21.7%;
+        color: $fontColor;
+        font-family: Arial, Helvetica, sans-serif;
+        i {
+            color: $icons;
+            display: inline-block;
+            padding: 10px 15px 10px 15px;
+            width: 5%;
+        }
+        .toggle-icon {
+            padding: 10px 15px 0px 15px;
+            color: $topBar;
+        }
+        ul {
+            list-style: none;
+            padding: 0px;
+            font-size: 11px;
+            max-height: 350px;
+            overflow: auto;
+            li:hover {
+                background-color: $leftHover;
+            }
+        }
+        .new-task-category-input {
+            input {
+                font-size: 12px;
+                background-color: $left;
+                font-size: 10px;
+            }
+        }
+        .icons-bottom {
+            bottom: 0px; 
+            position: absolute;
+            bottom: 0%;
+            width: 27%;
+            font-size: 15px;
+            i {
+                padding: 14px;
+                &:hover {
+                    background-color: $leftHover;
+                }
+            }
+        } 
+    }
+    .center-container {
+        display: inline-block;
+        width: 76%;
+        vertical-align: top;
+        padding-left: 10px;
+        overflow: auto;
+        font-family: Arial, Helvetica, sans-serif;
+        i {
+            font-size: 9px;
+        }
+       span {
+            font-size: 12x;
+        }
+        .center-title {
+             span{
+                display: inline-block;
+                padding:30px 0px 25px 0px;
+             } 
+            i {
+               display: inline-block;
+            }
+    }
+        .icon-add-new-task {
+            color: $topBar;
+            padding-top: 0% ;
+        }
+        input {
+            font-size: 12px;
+            width: 94%;
+            padding: 0px 0px 4px 4px;
+        }
+        ul {
+            padding: 0px ;
+            margin: 0px;
+            input {
+                 display: inline-block;
+                 width: 30px;
+                 text-align: center;
+             }
+             span {
+                 vertical-align: top;
+             }
+             i {
+                 font-size: 12px;
+                 float: right;
+                 color: grey;
+             }
+             li {
+                 border-bottom: 1px solid $border;
+                 padding: 15px 0px 15px 0px ;
+                 font-size: 12px;
+                 &:hover {
+                    background-color: $leftHover;
+                 }
+             }
+        }
+        .add-task-border {
+            padding-top: 4px;
+            border-bottom: 1px solid $border;
+        } 
+    }
+    .center-container-shrunk{
+        width: 75%;
+    }
+    .right-container-hidden {
+         display: none;
+    }
+    .right-container {
+        display: inline-block;
+        background-color: $left;
+        width: 24%;
+        padding: 0px 10px 5px 10px;
+        vertical-align: top;
+        max-height: 445px;
+        overflow: auto;
+        color: grey;
+        font-size: 12px;
+        span {
+            display: inline-block;
+            width: 81%;
+            font-size: 12px;
+        }
+        .sub-task  {
+            padding: 0px;
+           input {
+               padding-right: 5px;
+           }
+           li {
+            list-style:none;
+            border-bottom: 1px solid $border;
+            padding: 1% 0% 1% 0% ;
+          }
+          span {
+            vertical-align: top;
+            font-size: 14px;
+          }
+        }
+        div {
+            background-color: $topBarIcons;
+            margin: 14px 0px 14px 0px;
+            padding: 9px 0px 9px 0px;
+        }
+        .add-step { 
+             padding: 0px 14px;
+        }
+        .add-to-my-day {
+            color: blue;
+        }
+        .add-supplementary-notes {
+            width: 98%;
+            height: 100%;
+            border: 0px;
+            outline: 0px;
+        }
+        .sub-task-name {
+            padding-bottom: 0%;
+            i {
+                float : right;
+            }
+        }
+        .add-step-input {
+            padding-top: 0%; 
+            i {
+                padding-left: 3px;
+            }
+        }
+        .remainder {
+            padding: 1px 0px 1px 0px;
+            ul {
+                padding: 0px;
+                li span {
+                    padding: 12px 0px 12px 0px;
+                    border-bottom: 1px solid $border;
+                }
+                .last-list span{
+                    border-bottom: 0px;
+                }
+            }
+        }
+        i {
+            display: inline-block;
+            width: 20px;
+            font-size: 12px;
+            color: $icons;
+            padding: 0px 10px 0px 10px;
+        }
+        .checkbox-input-right {
+            display: inline-block;
+        }
+
+        .set-sub-task-icon {
+            float: right;
+        }
+        .set-sub-task-name {
+            font-size: 15px;
+            width: 65%;
+            vertical-align: top;
+        }
+    }
 }
