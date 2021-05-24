@@ -101,7 +101,7 @@
                 id: (categories[categoryId - 1].tasks.length + 1),
                 name: newTask,
                 checked: false,
-                important:false,
+                important: false,
                 subTasks: []
             }
             taskId = task.id;
@@ -113,10 +113,10 @@
         }
     }
 
-     /**
-     * Function to add new sub tasks to right side
-     */
-      function addNewSubTask(event) {
+    /**
+    * Function to add new sub tasks to right side
+    */
+    function addNewSubTask(event) {
         if ("Enter" == event.key && document.getElementsByClassName("add-step-input")[0].value != "") {
             const newSubTask = document.getElementById("add-step-input").value;
             document.getElementById("add-step-input").value = "";
@@ -179,12 +179,12 @@
             document.getElementById("set-sub-task-icon").style.color = event.target.nextSibling.style.color;
             document.getElementsByClassName("checkbox-input-right")[0].checked = event.target.previousSibling.checked;
             document.getElementsByClassName("center-container")[0].style.width = "50%";
-           document.getElementsByClassName("center-container")[0].className = "center-container center-container-shrunk";
-           document.getElementsByClassName("right-container-hidden")[0].className = "right-container";
-        } else if("INPUT" === event.target.tagName) {
+            document.getElementsByClassName("center-container")[0].className = "center-container center-container-shrunk";
+            document.getElementsByClassName("right-container-hidden")[0].className = "right-container";
+        } else if ("INPUT" === event.target.tagName) {
             taskId = event.target.nextSibling.id;
             reflectCheckedOption(event);
-        } else if("I" === event.target.tagName){
+        } else if ("I" === event.target.tagName) {
             taskId = event.target.previousSibling.id;
             reflectImportantOption(event);
         }
@@ -194,46 +194,42 @@
      * Reflects important option from task in center to right side
      */
     function reflectImportantOption(event) {
-        if("fas fa-star" === event.target.className) {   
-            event.target.style.color = "grey";
-            event.target.className = "far fa-star";
+        if ("fas fa-star" === event.target.className) {
+            event.target.className = "far fa-star icon-important-before";
             const task = categories[categoryId - 1].tasks[taskId - 1];
             categories[categoryId - 1].tasks[taskId - 1].important = false;
-            if(categories[1].tasks.includes(task)) {
-                categories[1].tasks.splice(taskId - 1, 1);                               
-            }  
-            if(event.target.nextSibling.textContent === document.getElementsByClassName("set-sub-task-name")[0].textContent) {
-            document.getElementById("set-sub-task-icon").style.color = "grey";
-            document.getElementById("set-sub-task-icon").className = "far fa-star";
+            if (categories[1].tasks.includes(task)) {
+                categories[1].tasks.splice(taskId - 1, 1);
             }
-        } else { 
-            event.target.style.color = "#0078D7";
-            event.target.className = "fas fa-star";
+            if (event.target.nextSibling.textContent === document.getElementsByClassName("set-sub-task-name")[0].textContent) {
+                document.getElementById("set-sub-task-icon").className = "far fa-star icon-important-before";
+            }
+        } else {
+            event.target.className = "fas fa-star icon-imporatant-after";
             const task = categories[categoryId - 1].tasks[taskId - 1];
-            categories[1].tasks.push(task);          
+            categories[1].tasks.push(task);
             categories[categoryId - 1].tasks[taskId - 1].important = true;
-            if(event.target.nextSibling.textContent === document.getElementsByClassName("set-sub-task-name")[0].textContent) {
-            document.getElementById("set-sub-task-icon").style.color = "blue";
-            document.getElementById("set-sub-task-icon").className = "fas fa-star";
+            if (event.target.nextSibling.textContent === document.getElementsByClassName("set-sub-task-name")[0].textContent) {
+                document.getElementById("set-sub-task-icon").className = "fas fa-star icon-important-after";
             }
-        } 
+        }
     }
 
     /**
      * Reflects checked option from task in center to right side
      */
     function reflectCheckedOption(event) {
-        if(true === event.target.checked) {
+        if (true === event.target.checked) {
             categories[categoryId - 1].tasks[taskId - 1].checked = true;
-           if(event.target.nextSibling.textContent === document.getElementsByClassName("set-sub-task-name")[0].textContent) {
-                 document.getElementsByClassName("checkbox-input-right")[0].checked = true;   
-           }
+            if (event.target.nextSibling.textContent === document.getElementsByClassName("set-sub-task-name")[0].textContent) {
+                document.getElementsByClassName("checkbox-input-right")[0].checked = true;
+            }
         } else if (false === event.target.checked) {
             categories[categoryId - 1].tasks[taskId - 1].checked = false;
-                if(event.target.nextSibling.textContent === document.getElementsByClassName("set-sub-task-name")[0].textContent) {   
-                    document.getElementsByClassName("checkbox-input-right")[0].checked = false;
-                }
-            }   
+            if (event.target.nextSibling.textContent === document.getElementsByClassName("set-sub-task-name")[0].textContent) {
+                document.getElementsByClassName("checkbox-input-right")[0].checked = false;
+            }
+        }
     }
 
     /**
@@ -245,7 +241,7 @@
         const icon = document.createElement("i");
         const span = document.createElement("span");
         input.id = task.id;
-        if(true == task.important) {
+        if (true == task.important) {
             icon.className = "fas fa-star";
             icon.style.color = "#0078D7";
         } else {
@@ -254,9 +250,9 @@
         span.appendChild(document.createTextNode(task.name));
         span.id = task.id;
         input.setAttribute("type", "checkbox");
-        if(true == task.checked) {
+        if (true == task.checked) {
             input.checked = true;
-        } 
+        }
         list.append(input, span, icon);
         return list;
     }
