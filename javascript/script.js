@@ -37,41 +37,34 @@
     /**
      * Function to render left navigation bar for tasks category
      */
-    function init() {
+    let init = () => {
         const unOrderedList = document.getElementById("left-navigation");
         for (const feature in categories) {
-            const list = document.createElement("li");
-            const span = document.createElement("span");
-            const icon = document.createElement("i");
-            icon.className = categories[feature].icon;
-            span.id = categories[feature].id;
-            span.appendChild(document.createTextNode(categories[feature].name));
-            list.appendChild(icon);
-            list.appendChild(span);
-            unOrderedList.appendChild(list);
+            const list = $('<li>');
+             $('<i>').
+            addClass(categories[feature].icon).
+            appendTo(list);
+            $('<span>').attr("id", categories[feature].id).
+            text(categories[feature].name).
+            appendTo(list);
+            list.appendTo(unOrderedList);
         }
 
-        document.getElementById("input-new-task-category").
-            addEventListener("keypress", addNewTaskCategory);
+        $("#input-new-task-category").keypress(addNewTaskCategory);
+        $("#new-task-input").keypress(addNewTask);
+        $("#add-step-input").keypress(addNewSubTask);
+        $("#existing-task-list").click(renderSubTask);
+        $("#left-navigation").click(renderTask);
 
-        document.getElementById("new-task-input").
-            addEventListener("keypress", addNewTask);
-
-        document.getElementById("add-step-input").
-            addEventListener("keypress", addNewSubTask);
-
-        document.getElementById("existing-task-list").addEventListener("click", renderSubTask);
-
-        document.getElementById("left-navigation").addEventListener("click", renderTask);
     }
 
     /**
      * Function to add new tasks category to left navigation bar
      */
-    function addNewTaskCategory(event) {
-        if ("Enter" == event.key && document.getElementById("input-new-task-category").value != "") {
-            const newTaskCategory = document.getElementById("input-new-task-category").value;
-            document.getElementById("input-new-task-category").value = "";
+    let addNewTaskCategory = (event) => {
+        if ("Enter" == event.key && $("#input-new-task-category").val() != "") {
+            const newTaskCategory = $("#input-new-task-category").val();
+            $("#input-new-task-category").val('');
             const newTask = {
                 id: categories.length + 1,
                 icon: "fas fa-list-ul",
@@ -79,24 +72,22 @@
                 tasks: []
             }
             categories.push(newTask);
-            const unOrderedList = document.getElementById("left-navigation");
-            const list = document.createElement("li");
-            const icon = document.createElement("i");
-            const span = document.createElement("span");
-            icon.className = newTask.icon;
-            span.id = newTask.id;
+            const unOrderedList = $("#left-navigation");
+            const list = $("<li>");
+            const icon = $("<i>").addClass(newTask.icon);
+            const span = $("<span>").attr("id", newTask.id);
             list.append(icon, span, newTask.name);
-            unOrderedList.appendChild(list);
+            unOrderedList.append(list);
         }
     }
 
     /**
      * Function to add new tasks center part
      */
-    function addNewTask(event) {
-        if ("Enter" == event.key && document.getElementById("new-task-input").value != "") {
-            const newTask = document.getElementById("new-task-input").value;
-            document.getElementById("new-task-input").value = "";
+    let addNewTask = (event) => {
+        if ("Enter" == event.key && $("#new-task-input").val() != "") {
+            const newTask = $("#new-task-input").val();
+            $("#new-task-input").val("");
             const task = {
                 id: (categories[categoryId - 1].tasks.length + 1),
                 name: newTask,
@@ -108,7 +99,7 @@
             categories[categoryId - 1].tasks.push(task);
             const unOrderedList = document.getElementById("existing-task-list");
             const list = getTask(task);
-            unOrderedList.appendChild(list);
+            unOrderedList.append(list);
 
         }
     }
@@ -116,31 +107,28 @@
     /**
     * Function to add new sub tasks to right side
     */
-    function addNewSubTask(event) {
-        if ("Enter" == event.key && document.getElementsByClassName("add-step-input")[0].value != "") {
-            const newSubTask = document.getElementById("add-step-input").value;
-            document.getElementById("add-step-input").value = "";
+    let addNewSubTask = (event) => {
+        if ("Enter" == event.key && $(".add-step-input").val() != "") {
+            const newSubTask = $("#add-step-input").val();
+            $("#add-step-input").val("");
             const subTask = {
                 id: categories[categoryId - 1].tasks[taskId - 1].subTasks + 1,
                 name: newSubTask
             }
             categories[categoryId - 1].tasks[taskId - 1].subTasks.push(subTask);
-            const unOrderedList = document.getElementsByClassName("sub-task")[0];
+            const unOrderedList = $(".sub-task");
             const list = getSubTask(subTask);
-            unOrderedList.appendChild(list);
+            unOrderedList.append(list);
         }
     }
 
     /**
      * Function to get one subtask element
      */
-    function getSubTask(subTask) {
-        const list = document.createElement("li");
-        const input = document.createElement("input");
-        const span = document.createElement("span");
-        span.appendChild(document.createTextNode(subTask.name));
-        input.setAttribute("type", "checkbox");
-        input.setAttribute("name", "check");
+    let getSubTask = (subTask) => {
+        const list = $("<li>");
+        const input = $("<input>").attr("type", "checkbox").attr("name", "check");
+        const span = $("<span>").text(subTask.name);
         list.append(input, span);
         return list;
     }
@@ -148,22 +136,18 @@
     /**
      * Function to render list of tasks of a category in middle part
      */
-    function renderTask(event) {
-        if ("SPAN" == event.target.tagName && event.target.parentNode.parentNode.id == "left-navigation") {
-            categoryId = event.target.id;
-
-            categoryId = event.target.id;
-            document.getElementsByClassName("center-title")[0].firstChild.nextSibling.innerHTML =
-                event.target.textContent;
-            document.getElementsByClassName("center-title")[0].firstChild.nextSibling.id =
-                event.target.id;
+    let renderTask = (event) => {
+        if ("SPAN" == $(event.target).prop("tagName") && $(event.target).parent().parent().prop("id") == "left-navigation") {
+            categoryId = $(event.target).prop("id");
+           $(".center-title:first-child").text("\n" + $(event.target).text() + "\n\n");
+            $(".center-title").prop("id", $(event.target).prop("id"));
             const tasks = categories[event.target.id - 1].tasks;
-            taskId = event.target.id;
-            const unOrderedList = document.getElementById("existing-task-list");
-            unOrderedList.innerHTML = "";
+            taskId = $(event.target).prop("id");
+            const unOrderedList = $("#existing-task-list");
+            unOrderedList.html("");
             for (const task in tasks) {
                 const list = getTask(tasks[task]);
-                unOrderedList.appendChild(list);
+                unOrderedList.append(list);
             }
         }
     }
@@ -171,21 +155,20 @@
     /**
      * Function to render list of sub tasks of a category in right side
      */
-    function renderSubTask(event) {
+    let renderSubTask = (event) => {
         if ("SPAN" === event.target.tagName && "existing-task-list" === event.target.parentNode.parentNode.id) {
-            taskId = event.target.id;
-            document.getElementsByClassName("set-sub-task-name")[0].textContent = event.target.textContent;
-            document.getElementById("set-sub-task-icon").className = event.target.nextSibling.className;
-            document.getElementById("set-sub-task-icon").style.color = event.target.nextSibling.style.color;
-            document.getElementsByClassName("checkbox-input-right")[0].checked = event.target.previousSibling.checked;
-            document.getElementsByClassName("center-container")[0].style.width = "50%";
-            document.getElementsByClassName("center-container")[0].className = "center-container center-container-shrunk";
-            document.getElementsByClassName("right-container-hidden")[0].className = "right-container";
-        } else if ("INPUT" === event.target.tagName) {
-            taskId = event.target.nextSibling.id;
+            taskId = $(event.target).attr("id");
+            $(".set-sub-task-name").text($(event.target).text());
+            $("#set-sub-task-icon").addClass($(event.target).next().className)
+            .attr("color", event.target.nextSibling.style.color);
+            $(".checkbox-input-right").attr("checked" , $(event.target).prev().checked);
+            $(".center-container").addClass("center-container-shrunk");
+            $(".right-container-hidden").addClass("right-container");
+        } else if ("INPUT" === $(event.target).prop("tagName")) {
+            taskId = $(event.target).next().attr("id");
             reflectCheckedOption(event);
-        } else if ("I" === event.target.tagName) {
-            taskId = event.target.previousSibling.id;
+        } else if ("I" === $(event.target).prop("tagName")) {
+            taskId = $(event.target).prev().attr("id");
             reflectImportantOption(event);
         }
     }
@@ -193,24 +176,25 @@
     /**
      * Reflects important option from task in center to right side
      */
-    function reflectImportantOption(event) {
-        if ("fas fa-star" === event.target.className) {
-            event.target.className = "far fa-star icon-important-before";
+    let reflectImportantOption = (event) => {
+        if ("fas fa-star icon-important-before" == event.target.className) {
+            event.target.className = "far fa-star icon-important-after";
             const task = categories[categoryId - 1].tasks[taskId - 1];
             categories[categoryId - 1].tasks[taskId - 1].important = false;
             if (categories[1].tasks.includes(task)) {
                 categories[1].tasks.splice(taskId - 1, 1);
             }
-            if (event.target.nextSibling.textContent === document.getElementsByClassName("set-sub-task-name")[0].textContent) {
-                document.getElementById("set-sub-task-icon").className = "far fa-star icon-important-before";
+            if (event.target.previousSibling.textContent === document.getElementsByClassName("set-sub-task-name")[0].textContent) {
+                document.getElementById("set-sub-task-icon").className = "far fa-star icon-important-after";
             }
         } else {
-            event.target.className = "fas fa-star icon-imporatant-after";
+            event.target.className = "fas fa-star icon-important-before";
+         //   event.target.style.color = "blue";
             const task = categories[categoryId - 1].tasks[taskId - 1];
             categories[1].tasks.push(task);
             categories[categoryId - 1].tasks[taskId - 1].important = true;
-            if (event.target.nextSibling.textContent === document.getElementsByClassName("set-sub-task-name")[0].textContent) {
-                document.getElementById("set-sub-task-icon").className = "fas fa-star icon-important-after";
+            if (event.target.previousSibling.textContent === document.getElementsByClassName("set-sub-task-name")[0].textContent) {
+                document.getElementById("set-sub-task-icon").className = "fas fa-star icon-important-before";
             }
         }
     }
@@ -218,7 +202,7 @@
     /**
      * Reflects checked option from task in center to right side
      */
-    function reflectCheckedOption(event) {
+    let reflectCheckedOption = (event) => {
         if (true === event.target.checked) {
             categories[categoryId - 1].tasks[taskId - 1].checked = true;
             if (event.target.nextSibling.textContent === document.getElementsByClassName("set-sub-task-name")[0].textContent) {
@@ -235,17 +219,16 @@
     /**
      * Function to return one row of a task
      */
-    function getTask(task) {
+    let getTask = (task) => {
         const list = document.createElement("li");
         const input = document.createElement("input");
         const icon = document.createElement("i");
         const span = document.createElement("span");
         input.id = task.id;
         if (true == task.important) {
-            icon.className = "fas fa-star";
-            icon.style.color = "#0078D7";
+            icon.className = "fas fa-star icon-important-before";
         } else {
-            icon.className = "far fa-star";
+            icon.className = "far fa-star icon-important-after";
         }
         span.appendChild(document.createTextNode(task.name));
         span.id = task.id;

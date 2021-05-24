@@ -1,5 +1,14 @@
 body {
   margin: 0px;
+  height: 465px;
+}
+
+body .icon-important-before {
+  color: blue "important!";
+}
+
+body .icon-important-after {
+  color: blue "important!";
 }
 
 body input[type=checkbox]:checked + span {
@@ -20,6 +29,7 @@ body ul span {
 }
 
 body .top {
+  font-family: Arial, Helvetica, sans-serif;
   display: block;
   background-color: #0078D7;
   padding: 6px 0px 6px 2px;
@@ -30,7 +40,6 @@ body .top a {
   width: 28%;
   text-decoration: none;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   font-weight: 700;
 }
@@ -91,9 +100,10 @@ body .top .login-name {
 body .left-container {
   background-color: #f4f4f4;
   display: inline-block;
-  width: 21.7%;
   height: 465px;
+  width: 21.7%;
   color: #575555;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body .left-container i {
@@ -112,7 +122,6 @@ body .left-container ul {
   list-style: none;
   padding: 0px;
   font-size: 11px;
-  font-family: Arial, Helvetica, sans-serif;
   max-height: 350px;
   overflow: auto;
 }
@@ -148,8 +157,8 @@ body .center-container {
   width: 76%;
   vertical-align: top;
   padding-left: 10px;
-  max-height: 465px;
   overflow: auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body .center-container i {
@@ -157,7 +166,6 @@ body .center-container i {
 }
 
 body .center-container span {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 12x;
 }
 
@@ -218,7 +226,8 @@ body .center-container .add-task-border {
 }
 
 body .center-container-shrunk {
-  width: 75%;
+  display: inline-block;
+  width: 50%;
 }
 
 body .right-container-hidden {
