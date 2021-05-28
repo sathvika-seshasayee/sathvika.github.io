@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'toDo';
+   title = 'toDo';     // how to use this class
+  // can i just write {{title}} in app component
 }
