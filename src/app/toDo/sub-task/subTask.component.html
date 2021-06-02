@@ -1,0 +1,96 @@
+<div class="container bg-light">
+    <div class="pt-2 mt-3 mb-3 bg-white">
+        <div class="row pb-2 ml-1 mr-1 pl-1">
+            <div class="col-lg-10 col-md-10 p-0">
+                <div class="pretty p-icon p-round w-auto">
+                    <input type="checkbox" />
+                    <div class="state p-success">
+                        <i class="icon mdi mdi-check bg-primary"></i>
+                        <label></label>
+                    </div>
+                </div>
+                <span>{{task.name}}</span>
+            </div>
+            <div class="col-lg-1 col-md-1">
+                <i class="far fa-star"></i>
+            </div>
+        </div>
+        <ul class="list-unstyled" *ngFor="let subTask of task.subTasks">
+            <li>
+                <div class="col-lg-10 col-md-10">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1">
+                            <div class="pretty p-icon p-round small w-auto">
+                                <input type="checkbox" />
+                                <div class="state p-success">
+                                    <i class="icon mdi mdi-check bg-primary"></i>
+                                    <label></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pb-2 col-lg-10 col-md-10 border-bottom border-light">
+                            <span class="taskName">{{subTask.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="row pt-2 ml-1 mb-3 pb-3">
+            <div class="col-lg-1 col-md-1">
+                <i class="fas fa-plus"></i>
+            </div>
+            <div class="col-lg-1 col-md-1">
+                <input placeholder="add step" [(ngModel)]="newSubTaskName" (keydown.enter)="addNewSubTask()">
+            </div>
+        </div>
+    </div>
+    <div class="bg-white mt-3 mb-3 pt-3 pb-3">
+        <i class="far fa-sun pr-3 pl-3"></i>
+        <span class = "text-primary">Add to My Day</span>
+    </div>
+    <div class="bg-white mt-2 mb-2">
+        <ul class="list-unstyled pt-1 pb-1 pl-1">
+            <li class="pt-2 pb-2">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1">
+                        <i class="far fa-bell pr-2 pl-2"></i>
+                    </div>
+                    <div class="col-lg-10 col-md-10">
+                        <div class="border-bottom border-light pb-2">Remaind me</div>
+                    </div>
+                </div>
+            </li>
+            <li class="pt-2 pb-2">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1">
+                        <i class="fas fa-calendar-week pr-2 pl-2"></i>
+                    </div>
+                    <div class="col-lg-10 col-md-10">
+                        <div class="border-bottom border-light pb-2">Add due date</div>
+                    </div>
+                </div>
+            </li>
+            <li class="pt-2 pb-2">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1">
+                        <i class="fas fa-redo pr-2 pl-2"></i>
+                    </div>
+                    <div class="col-lg-10 col-md-10">
+                        <div class="pb-2">Repeat</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="bg-white mt-2 mb-3 pt-3 pb-3">
+        <i class="fas fa-tag pr-2 pl-2"></i>
+        <span>Pick a category</span>
+    </div>
+    <div class="bg-white mt-2 mb-3 pt-3 pb-3">
+        <i class="fas fa-paperclip pr-2 pl-2"></i>
+        <span>Add file</span>
+    </div>
+
+    <textarea name="add-notes" class="w-100 bg-white border-light" rows="4"></textarea>
+
+</div>

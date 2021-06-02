@@ -1,0 +1,17 @@
+input {
+  border: none;
+  outline: none;
+}
+
+.input-group {
+  background-color: #badef7;
+}
+
+.search {
+  background-color: #badef7;
+}
+
+.navbar {
+  background-color: #0078D7;
+}
+/*# sourceMappingURL=header.component.css.map */

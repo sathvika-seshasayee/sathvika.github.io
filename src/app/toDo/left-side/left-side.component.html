@@ -1,0 +1,19 @@
+<div class=" left-container bg-light pl-3">
+    <div class="toggle pt-4 pb-3">
+    <i class="fas fa-chevron-left text-primary"></i>
+</div>
+    <ul class = "list-unstyled list-group m-0" *ngFor = "let category of categories">
+        <!-- <li> list-group-item list-group-item-action -->
+            <li>
+            <i class = "{{category.icon}} pr-3 pb-2 pt-3 fa-sm"></i>
+            <span  (click)="renderTask(category.id)">
+                {{category.name}}</span>
+        </li> 
+    </ul>
+<div>
+    <i class="fas fa-plus pr-2 pt-4"></i>
+    <input placeholder="New list" value = "Untitled-category"
+    [(ngModel)] = 'newCategoryName' class = "bg-light"
+            (keydown.enter) = "addNewTaskCategory()">
+</div>
+</div>

@@ -1,0 +1,35 @@
+<div class = "container">
+    <h5 class="pb-3 pt-3 text-primary">{{taskCategory.name ? taskCategory.name : "Tasks"}}</h5>
+    <ul class="list-unstyled w-100">
+        <li class="border-bottom input-task">
+            <i class="fa fa-plus pr-2"></i>
+            <input type="text" value="untitiled-task" class="w-75 pl-3 pb-3 shadow-none" [(ngModel)]='newTaskName'
+                (keydown.enter)="addNewTask()">
+        </li>
+        <ng-container *ngFor="let task of taskCategory.tasks">
+            <li class="border-bottom pt-3 pb-3" >
+                <div class="row">
+                    <div class="col-lg-1 col-md-1">
+                        <div class="pretty p-icon p-round w-auto">
+                            <input type="checkbox" >
+                            <!-- [(ngModel)] = "isChecked" -->
+                            <div class="state p-success">
+                                <i class="icon mdi mdi-check bg-primary"></i>
+                                <label></label>
+                            </div> 
+                        </div>
+                        <!-- " <del> hi </del>"  :task.name -->
+                        <!-- [(ngModel)] = "isChecked" -->
+                    </div>    
+                    <div class="col-lg-10 col-md-10 p-0 " (click)="renderSubTask(task.id)">
+                        <span class ="taskName">{{task.name}}</span>
+                        <!-- {{isChecked? task.name : <s> task.name </s>}} -->
+                   </div>
+                    <div class="col-lg-1 col-md-1">
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </li>
+        </ng-container>
+    </ul>
+</div>

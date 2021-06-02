@@ -13,7 +13,7 @@ export class AuthenticationService {
             password : "sesh1962"}
           ];
 
-  isUserExist(email:String, password: String) {
+  validateUser(email:String, password: String) {
     return this.users.some((user) => (user.email === email) && user.password === password);
   }
 

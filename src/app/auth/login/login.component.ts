@@ -16,8 +16,7 @@ export class LoginComponent implements OnInit {
   }
 
     onSubmit(form: NgForm) {
-        if(this.authenticationService.isUserExist(form.value.email, form.value.password)) {
-          alert("User name and password valid");
+        if(this.authenticationService.validateUser(form.value.email, form.value.password)) {
           this.router.navigate(["toDo"]);
         } else {
           alert("Incorrect user name and password");

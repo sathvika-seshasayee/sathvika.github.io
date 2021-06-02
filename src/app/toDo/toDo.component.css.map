@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,SAAS,EAAE,MAAM;CACpB;;AACD,AAAA,IAAI,CAAC;EACD,SAAS,EAAE,MAAM;CACpB",
+    "sources": [
+        "toDo.component.scss"
+    ],
+    "names": [],
+    "file": "toDo.component.css"
+}
