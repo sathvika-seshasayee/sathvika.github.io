@@ -3,7 +3,7 @@ import { Itasks } from '../task/tasks';
 import { IsubTask } from './subTask';
 
 @Component ({
-    selector: 'right-part',
+    selector: 'sub-task',
     templateUrl: 'subTask.component.html',
     styleUrls:['subTask.component.scss']
 })
@@ -27,8 +27,6 @@ export class SubTaskComponent {
   }
 
   completedOrNot(id:number, event:any) {
-    console.log(event);
-    console.log(event.target.checked);
     if(event.target.checked) {
         let taskNameSpan  = document.getElementsByClassName("taskName")[0];       
        taskNameSpan.className = "taskName strikeOut";

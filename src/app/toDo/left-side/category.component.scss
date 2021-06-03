@@ -1,10 +1,17 @@
-$icon:rgb(173, 171, 171);
 $hover:rgb(238, 235, 235);
+$icon:rgb(173, 171, 171);
 .container {
-    overflow: auto;
     height: 565px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
+    overflow: auto;
+    i {
+        color: $icon;
+    }
+    input {
+        border: none;
+        outline: none;
+    }
     li {
         &:hover {
           background-color: $hover;
@@ -13,13 +20,5 @@ $hover:rgb(238, 235, 235);
             cursor: pointer;
         }
     }
-    i {
-        color: $icon;
-    }
-    input {
-        border: none;
-        outline: none;
-    }
     
 }
-

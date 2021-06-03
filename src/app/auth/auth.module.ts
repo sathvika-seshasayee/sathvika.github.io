@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
+import { LoginDetailsAuthenticationGuard } from './auth-guard.service';
 
 
 @NgModule({

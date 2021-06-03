@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
-import { Icategories } from "./categories";
+import { Icategories } from "./left-side/categories";
+
 
 @Injectable()
-export class CategoryService {
+export class ToDoService {
     getCategories() : Icategories[] {
         return [{
                     id: 1,

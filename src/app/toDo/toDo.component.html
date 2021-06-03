@@ -1,16 +1,16 @@
 <div class = "container m-0 p-0 ">
-<top-bar></top-bar>
+<header></header>
 <div class="row">
     <div class="col-lg-3 col-md-3">
-        <left-side (taskCategoryNameChanged)="onTaskCategoryChange($event)">
-        </left-side>
+        <category (taskCategoryNameChanged)="onTaskCategoryChange($event)">
+        </category>
     </div>
     <div class="col-lg-9 col-md-9 middle-container">
-        <center-part [taskCategory]="taskCategory" (taskNameClicked)="onTaskNameClicked($event)">
-        </center-part>
+        <task [taskCategory]="taskCategory" (taskNameClicked)="onTaskNameClicked($event)">
+        </task>
     </div>
     <div class="right-container d-none">
-        <right-part [task]="task"></right-part>
+        <sub-task [task]="task"></sub-task>
     </div>
 </div>
 </div>

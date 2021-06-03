@@ -1,18 +1,19 @@
-input {
-    border:none;
-    outline: none;
-}
-.strikeOut {
-    text-decoration: line-through;
-}
-li {
-    &:hover {
-      background-color: rgb(238, 235, 235);
+$hover:rgb(238, 235, 235);
+.container {
+    font-size: 14px;
+    li {
+        &:hover {
+          background-color: $hover;
+        }
+        span {
+            cursor: pointer;
+        }
     }
-    span {
-        cursor: pointer;
+    input {
+        border:none;
+        outline: none;
     }
-}
-.input-task:hover {
-    background-color: white;
+    .input-task:hover {
+        background-color: white;
+    }
 }

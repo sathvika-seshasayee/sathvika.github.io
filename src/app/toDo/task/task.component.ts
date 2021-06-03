@@ -3,7 +3,7 @@ import { Icategories } from '../left-side/categories';
 import { Itasks } from './tasks';
 
 @Component({
-    selector: 'center-part',
+    selector: 'task',
     templateUrl: 'task.component.html',
     styleUrls : ['task.component.scss']
 })

@@ -1,17 +1,17 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core'
+import { ToDoService } from '../toDo.service';
 import { Icategories } from './categories';
-import { CategoryService } from './left-side.service';
 
 @Component ({
-    selector: 'left-side',
-    templateUrl: 'left-side.component.html',
-    styleUrls: ['left-side.component.scss'],
-    providers: [CategoryService] 
+    selector: 'category',
+    templateUrl: 'category.component.html',
+    styleUrls: ['category.component.scss'],
+    providers: [ToDoService] 
 })
 
-export class LeftSideComponent implements OnInit{
+export class CategoryComponent implements OnInit{
     
-    constructor(private _categories : CategoryService) {
+    constructor(private _categories : ToDoService) {
     }
 
     categories:Icategories[] = [];

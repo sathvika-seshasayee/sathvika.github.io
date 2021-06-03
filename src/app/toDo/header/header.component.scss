@@ -1,13 +1,17 @@
+$searchBar:#badef7;
+$navBar:#0078D7;
 input {
     border:none;
     outline: none;
-}
-.input-group  {
-    background-color: #badef7;
-}
-.search {
-    background-color: #badef7;
+    background-color: $searchBar;
 }
 .navbar {
-    background-color: #0078D7;
+    background-color: $navBar;
+    .input-group  {
+        background-color: $searchBar;
+        .search {
+            background-color: $searchBar;
+        }
+    }
 }
+
